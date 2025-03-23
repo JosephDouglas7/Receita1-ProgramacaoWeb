@@ -1,6 +1,3 @@
-//Feito a correção de erros com ajuda do: https://copilot.microsoft.com/ 
-
-
 <!DOCTYPE html> 
 <html>  
   <head>
@@ -41,80 +38,110 @@
         font-weight: bold;
         color: #333;
       }
+      /* Estilo para os links */
+      a.link {
+        color: blue;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+      a.link:hover {
+        color: red;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>   
-     <img src="https://akamai.sscdn.co/uploadfile/letras/playlists/3/a/b/9/3ab92363f7974d679f4194de9f389b5b.jpg" width="200"/>
-     <h1> Uma Nova...</h1> 
-     <p> 
-         Eu só preciso de hoje<br/> 
-         Pra viver e ser feliz<br/> 
-         O passado já me foge<br/> 
-         E o futuro nada diz!<br/>
-     </p> 
-     <br/> 
-     <p> 
-        Autor: Francisco Borges
-     </p>
+    <img src="https://akamai.sscdn.co/uploadfile/letras/playlists/3/a/b/9/3ab92363f7974d679f4194de9f389b5b.jpg" width="200"/>
+    <h1> Uma Nova...</h1> 
+    <p> 
+        Eu só preciso de hoje<br/> 
+        Pra viver e ser feliz<br/> 
+        O passado já me foge<br/> 
+        E o futuro nada diz!<br/>
+    </p> 
+    <br/> 
+    <p> 
+       Autor: Francisco Borges
+    </p>
 
-     <!-- Contêiner para as tabelas -->
-     <div class="tabela-container">
-       <!-- Primeira tabela -->
-       <table>
-         <caption><a href="bebidas.html" target="_blank">Tabela de Bebidas</a></caption>
-         <tr>
-           <th>Bebida</th>
-           <th>Preço</th>
-         </tr>
-         <tr>
-           <td>Café</td>
-           <td>R$ 5,00</td>
-         </tr>
-         <tr>
-           <td>Chá</td>
-           <td>R$ 4,50</td>
-         </tr>
-         <tr>
-           <td>Suco de Laranja</td>
-           <td>R$ 7,00</td>
-         </tr>
-         <tr>
-           <td>Refrigerante</td>
-           <td>R$ 6,00</td>
-         </tr>
-       </table>
+    <!-- Contêiner para as tabelas -->
+    <div class="tabela-container">
+      <!-- Primeira tabela -->
+      <table>
+        <caption><a href="bebidas.html" target="_blank" class="link">Tabela de Bebidas</a></caption>
+        <tr>
+          <th>Bebida</th>
+          <th>Preço</th>
+        </tr>
+        <tr>
+          <td>Café</td>
+          <td>R$ 5,00</td>
+        </tr>
+        <tr>
+          <td>Chá</td>
+          <td>R$ 4,50</td>
+        </tr>
+        <tr>
+          <td>Suco de Laranja</td>
+          <td>R$ 7,00</td>
+        </tr>
+        <tr>
+          <td>Refrigerante</td>
+          <td>R$ 6,00</td>
+        </tr>
+      </table>
 
-       <!-- Segunda tabela -->
-       <table>
-         <caption><a href="lanches.html" target="_blank">Tabela de Lanches</a></caption>
-         <tr>
-           <th>Lanche</th>
-           <th>Preço</th>
-         </tr>
-         <tr>
-           <td>Pão de Queijo</td>
-           <td>R$ 3,00</td>
-         </tr>
-         <tr>
-           <td>Coxinha</td>
-           <td>R$ 4,00</td>
-         </tr>
-         <tr>
-           <td>Sanduíche</td>
-           <td>R$ 8,50</td>
-         </tr>
-         <tr>
-           <td>Bolo</td>
-           <td>R$ 5,00</td>
-         </tr>
-       </table>
-     </div>
+      <!-- Segunda tabela -->
+      <table>
+        <caption><a href="lanches.html" target="_blank" class="link">Tabela de Lanches</a></caption>
+        <tr>
+          <th>Lanche</th>
+          <th>Preço</th>
+        </tr>
+        <tr>
+          <td>Pão de Queijo</td>
+          <td>R$ 3,00</td>
+        </tr>
+        <tr>
+          <td>Coxinha</td>
+          <td>R$ 4,00</td>
+        </tr>
+        <tr>
+          <td>Sanduíche</td>
+          <td>R$ 8,50</td>
+        </tr>
+        <tr>
+          <td>Bolo</td>
+          <td>R$ 5,00</td>
+        </tr>
+      </table>
+    </div>
 
-     <!-- Links para outras páginas -->
-     <div style="text-align: center; margin-top: 20px;">
-       <a href="index.html" target="_blank">Página Inicial</a> |
-       <a href="contato.html" target="_blank">Contato</a> |
-       <a href="sobre.html" target="_blank">Sobre</a>
-     </div>
+    <!-- Links para outras páginas -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="index.html" target="_blank" class="link">Página Inicial</a> |
+      <a href="contato.html" target="_blank" class="link">Contato</a> |
+      <a href="sobre.html" target="_blank" class="link">Sobre</a> |
+    </div>
+
+    <!-- Interatividade com Link -->
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="#" class="link" id="linkCarregar">Carregar Mensagem</a>
+    </div>
+    <div id="mensagemDiv" style="text-align: center; margin-top: 10px;"></div>
+
+    <script>
+      const carregarMensagem = () => {
+        const div = document.getElementById("mensagemDiv");
+        div.innerHTML = "<p><strong>Cerveja Guinness carregada com sucesso!</strong></p>";
+      };
+
+      const link = document.getElementById("linkCarregar");
+      link.addEventListener("click", (event) => {
+        event.preventDefault(); // Impede comportamento padrão do link
+        carregarMensagem();
+      });
+    </script>
   </body>
 </html>
